@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import CityList from './containers/city_list';
 
-function App() {
+// TODO: remove this line and use Redux
+const cities = [
+  { name: 'Paris', address: '16 Villa Gaudelet, 75011 Paris', slug: 'paris' },
+  { name: 'London', address: '14-22 Elder St, London E1 6BT', slug: 'london' },
+  { name: 'Berlin', address: 'Rudi-Dutschke-Straße 26, 10969 Berlin', slug: 'berlin' },
+];
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <CityList cities={cities} />
     </div>
   );
-}
+};
 
 export default App;
