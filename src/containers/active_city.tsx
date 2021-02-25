@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { connect } from 'react-redux';
 
-import { AppState, CityData } from './city_list';
+import { AppState, CityData } from '../App';
 
 
 type ActiveCityProps = {
@@ -10,14 +10,16 @@ type ActiveCityProps = {
 
 class ActiveCity extends Component<ActiveCityProps, {}> {
   render() {
+    const url = `https://kitt.lewagon.com/placeholder/cities/${this.props.city.slug}`;
     return (
       <div className="active-city">
-          <h3>...</h3>
+          <h3>{this.props.city.name}</h3>
+          <p>{this.props.city.address}</p>
+          <img src={url} width="100%" alt=""/>
       </div>
     )
   }
 }
-
 
 function mapStateToProps(state: AppState) {
   return {

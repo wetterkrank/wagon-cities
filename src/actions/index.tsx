@@ -1,4 +1,4 @@
-import { CityData } from '../containers/city_list';
+import { CityData } from '../App';
 
 const cities = [
   { name: "Paris", address: "16 Villa Gaudelet, 75011 Paris", slug: "paris" },

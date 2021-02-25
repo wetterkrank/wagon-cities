@@ -1,5 +1,5 @@
 
-import { CityData } from '../containers/city_list';
+import { CityData } from '../App';
 
 const activeCityReducer = (state: CityData, action: {type: string, payload: CityData}) => {
   if (state === undefined) {

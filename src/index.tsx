@@ -7,7 +7,8 @@ import App from './App';
 import citiesReducer from './reducers/cities_reducer';
 import activeCityReducer from './reducers/active_city_reducer';
 
-import 'bootstrap/dist/css/bootstrap.css';
+// Using older Bootstrap version instead -- see index.html
+// import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 
 

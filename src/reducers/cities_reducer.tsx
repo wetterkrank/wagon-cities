@@ -1,6 +1,6 @@
+import { CityData } from '../App';
 
-// TODO: fix types in the declaration
-const citiesReducer = (state: {}, action: {type: string, payload: []}) => {
+const citiesReducer = (state: CityData[], action: {type: string, payload: CityData[]}) => {
   if (state === undefined) {
     return [];
   }

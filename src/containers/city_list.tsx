@@ -1,17 +1,11 @@
 import { Component } from "react";
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 
-import { setCities } from '../actions';
 import City from './city';
-
-
-export type AppState = {
-  cities: { name: string, address: string, slug: string }[],
-  selectedCity: CityData
-}
-
-export type CityData = { name: string, address: string, slug: string }
+import { setCities } from '../actions';
+import { AppState, CityData } from '../App';
 
 type CityListProps = {
   cities: CityData[]
@@ -25,15 +19,14 @@ class CityList extends Component<CityListProps, {}> {
 
   render() {
     return (
-      <ul className="cities">
+      <ul className="list-group cities">
         {this.props.cities.map(city => <City key={city.slug} city={city} />)}
       </ul>
     )
   }
 }
 
-// TODO: fix dispatch type
-function mapDispatchToProps(dispatch: any) {
+function mapDispatchToProps(dispatch: Dispatch) {
   return bindActionCreators(
     { setCities: setCities },
     dispatch

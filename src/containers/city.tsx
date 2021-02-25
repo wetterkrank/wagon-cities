@@ -1,10 +1,9 @@
-import React from 'react';
-
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 
 import { setActiveCity } from '../actions';
-import { CityData } from './city_list';
+import { CityData } from '../App';
 
 
 type CityProps = {
@@ -18,10 +17,9 @@ function City(props: CityProps) {
   )
 }
 
-// TODO: dispatch type?
-function mapDispatchToProps(dispatch: any) {
+function mapDispatchToProps(dispatch: Dispatch) {
   return bindActionCreators(
     { setActiveCity: setActiveCity }, dispatch);
 }
 
-export default connect(mapDispatchToProps)(City);
+export default connect(null, mapDispatchToProps)(City); // Dispatch-only case: null is needed here
