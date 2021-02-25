@@ -1,4 +1,4 @@
-// import cityList from '../containers/city_list';
+import { CityData } from '../containers/city_list';
 
 const cities = [
   { name: "Paris", address: "16 Villa Gaudelet, 75011 Paris", slug: "paris" },
@@ -27,12 +27,18 @@ const cities = [
   { name: "Lyon", address: "23 Rue Paul Montrochet, 69002 Lyon", slug: "lyon" }
 ]
 
-function setCities() {
-  // TODO: Api call! For now, simulate a DB
+function setCities(): {type: string, payload: CityData[]} {
   return {
     type: 'SET_CITIES',
     payload: cities
   }
 }
 
-export { setCities }
+function setActiveCity(city: CityData): {type: string, payload: CityData} {
+  return {
+    type: 'SET_ACTIVE',
+    payload: city
+  }
+}
+
+export { setCities, setActiveCity }

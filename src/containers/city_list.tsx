@@ -6,14 +6,16 @@ import { setCities } from '../actions';
 import City from './city';
 
 
-type CityListProps = {
-  cities: { name: string, address: string, slug: string }[]
-  setCities: () => void;
+export type AppState = {
+  cities: { name: string, address: string, slug: string }[],
+  selectedCity: CityData
 }
 
-type AppState = {
-  cities: {name: string, address: string, slug: string}[],
-  selectedCity: string
+export type CityData = { name: string, address: string, slug: string }
+
+type CityListProps = {
+  cities: CityData[]
+  setCities: () => void;
 }
 
 class CityList extends Component<CityListProps, {}> {
@@ -24,7 +26,7 @@ class CityList extends Component<CityListProps, {}> {
   render() {
     return (
       <ul className="cities">
-        {this.props.cities.map(city => <City key={city.name} name={city.name} />)}
+        {this.props.cities.map(city => <City key={city.slug} city={city} />)}
       </ul>
     )
   }
