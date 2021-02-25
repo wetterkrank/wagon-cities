@@ -1,4 +1,3 @@
-
 import { CityData } from '../App';
 
 const activeCityReducer = (state: CityData, action: {type: string, payload: CityData}) => {
